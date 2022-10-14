@@ -87,10 +87,7 @@ fig.add_trace(
                     ),
     row=1, col=1
 )
-fig.update_layout({
-    'plot_bgcolor': 'rgba(0,0,0,0)',
-    'paper_bgcolor': 'rgba(0,0,0,0)'
-})
+
 
 # Add 3d surface of volcano
 fig.update_traces(marker_cmax=df_energy['Value'].max(), selector=dict(type='bar'))
@@ -111,6 +108,7 @@ fig.update_geos(
     showcountries=True,
     resolution=110, 
 )
+
 
 # Rotate x-axis labels
 fig.update_xaxes(tickangle=35)
@@ -133,7 +131,10 @@ fig.update_coloraxes(
     colorbar_tick0=0
     
 )
-
+fig.update_layout({
+    'plot_bgcolor': 'rgba(0,0,0,0)',
+    'paper_bgcolor': 'rgba(0,0,0,0)'
+})
 fig.update_layout(coloraxis=dict(colorscale=semi_wgyr,))
 # fig.update_coloraxes(colorscale=semi_wgyr,colorbar_title_text="Hg (t/y)")
 # fig_name='07-14-22_gma2018_asgm-emmiting-countries.pdf'
